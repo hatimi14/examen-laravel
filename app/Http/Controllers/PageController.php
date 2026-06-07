@@ -13,4 +13,12 @@ class PageController extends Controller
     {
         return view('dashboard');
     }
+    public function editarProyecto($id)
+    {
+        return view('editarProyecto', ['id' => $id]);
+    }
+    public function crearProyecto()
+    {
+        return view('crearProyecto');
+    }
 }

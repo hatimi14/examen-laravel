@@ -2,18 +2,53 @@
 <html>
 <head>
     <title>Dashboard</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #111;
+            color: white;
+        }
+
+    </style>
 </head>
 <body>
 
-    <h1>Dashboard</h1>
+    
+    <header>
+        <h1>GESTOR DELS MEUS PROJECTES</h1>
+        <p id="saludo"></p>
+        <button id="logout">
+            Cerrar sesión
+        </button>
+    </header>
 
-    <p id="saludo"></p>
+    <main class="layout">
 
-    <button id="logout">
-        Cerrar sesión
-    </button>
+        <aside class="sidebar">
+            <h2>Llistat del meus projectes</h2>
+            
+        </aside>
 
-    <script src="/js/dashboard.js"></script>
+        <article class="featured">
+            
+        </article>
+
+        <section class="news">
+            
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Examen DAW - Layout Responsive sense media queries</p>
+    </footer>
+
+<script src="/js/dashboard.js"></script>
 
 </body>
 </html>

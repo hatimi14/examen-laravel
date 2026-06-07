@@ -1,64 +1,61 @@
-const token = localStorage.getItem('token');
-
-const headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer ' + token
-};
-
-
-
-// LISTAR TODOS
+// GET - Listar todos
 fetch('/api/telefonos', {
     method: 'GET',
-    headers
+    headers: { 'Content-Type': 'application/json' }
 })
 .then(r => r.json())
-.then(data => console.log(data));
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
 
 
-
-// OBTENER UNO
-fetch('/api/telefonos/1', {
+// GET - Obtener uno por ID
+fetch('/api/telefonos/5', {
     method: 'GET',
-    headers
+    headers: { 'Content-Type': 'application/json' }
 })
 .then(r => r.json())
-.then(data => console.log(data));
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
 
 
-
-// CREAR
+// POST - Crear
 fetch('/api/telefonos', {
     method: 'POST',
-    headers,
-    body: JSON.stringify({
-        numero: '612345678',
-        tipo: 'móvil'
-    })
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ numero: '612345678', tipo: 'móvil' })
 })
 .then(r => r.json())
-.then(data => console.log(data));
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
 
 
-
-// ACTUALIZAR
-fetch('/api/telefonos/1', {
+// PUT - Reemplazar entero
+fetch('/api/telefonos/5', {
     method: 'PUT',
-    headers,
-    body: JSON.stringify({
-        numero: '699999999',
-        tipo: 'fijo'
-    })
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ numero: '699999999', tipo: 'fijo' })
 })
 .then(r => r.json())
-.then(data => console.log(data));
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
 
 
+// PATCH - Actualizar parcial
+fetch('/api/telefonos/5', {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ numero: '611000000' })
+})
+.then(r => r.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
 
-// ELIMINAR
-fetch('/api/telefonos/1', {
+
+// DELETE - Eliminar
+fetch('/api/telefonos/5', {
     method: 'DELETE',
-    headers
+    headers: { 'Content-Type': 'application/json' }
 })
 .then(r => r.json())
-.then(data => console.log(data));
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
