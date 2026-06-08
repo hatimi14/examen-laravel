@@ -28,4 +28,10 @@ class User extends Authenticatable
     public function projects(): HasMany {
         return $this->hasMany(Project::class);
     }
+    public function mensajesEnviados(): HasMany {
+        return $this->hasMany(Mensaje::class, 'remitente_id');
+    }
+    public function mensajesRecibidos(): HasMany {
+        return $this->hasMany(Mensaje::class, 'destinatario_id');
+    }
 }

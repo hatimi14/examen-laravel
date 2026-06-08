@@ -5,7 +5,7 @@ if (!token) {
 }
 
 // FUERA de cargarUsuario para que onclick pueda verla
-async function cargarProyecto(id) {
+/*async function cargarProyecto(id) {
 
     const featured = document.getElementsByClassName('featured')[0];
 
@@ -35,7 +35,7 @@ async function cargarProyecto(id) {
 }
 
 // Necesario para onclick=""
-window.cargarProyecto = cargarProyecto;
+window.cargarProyecto = cargarProyecto;*/
 
 async function cargarUsuario() {
 
@@ -57,16 +57,21 @@ async function cargarUsuario() {
     document.getElementById('saludo').innerText =
         'Bienvenido ' + user.name;
 
-    const sidebar = document.getElementsByClassName('sidebar')[0];
+    /*const sidebar = document.getElementsByClassName('sidebar')[0];*/
     const header = document.getElementsByTagName('header')[0];
 
-    const linka = document.createElement('a');
+    /*const linka = document.createElement('a');
     linka.href = '/crearProyecto';
     linka.textContent = 'Añade un nuevo proyecto';
 
+    header.appendChild(linka);*/
+    const linka = document.createElement('a');
+    linka.href = '/nuevoMensaje';
+    linka.textContent = 'Añade un nuevo mensaje';
+
     header.appendChild(linka);
 
-    fetch('/api/projects', {
+    /*fetch('/api/projects', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -121,7 +126,7 @@ async function cargarUsuario() {
 
         sidebar.innerHTML =
             '<p>Error en la consulta</p>';
-    });
+    });*/
 }
 
 cargarUsuario();
